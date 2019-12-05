@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework_swagger',
     'rest_framework',
     'apps.tipousuario'
 ]
@@ -127,10 +128,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (BASE_DIR, '/static')
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES':[
-        'rest_framework.permissions.IsAuthenticated',
-    ],
+     #'DEFAULT_PERMISSION_CLASSES':[
+     #   'rest_framework.permissions.IsAuthenticated',
+    #],
     'DEFAULT_AUTHENTICATION_CLASSES':[
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ]
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
 }
+
+#'DEFAULT_PERMISSION_CLASSES':[
+#        'rest_framework.permissions.IsAuthenticated',
+#    ],
